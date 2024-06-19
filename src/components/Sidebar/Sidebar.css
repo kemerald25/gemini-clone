@@ -1,0 +1,129 @@
+.sidebar {
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 25px 15px;
+    width: 80px; 
+    /* Adjust as necessary for the collapsed state */
+    transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+.sidebar.extended {
+    width: 190px; 
+    /* Adjust as necessary for the extended state */
+}
+
+.sidebar img {
+    width: 20px;
+}
+
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    background-color: #e6eaf1;
+    cursor: pointer;
+    color: grey;
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sidebar .top {
+    /* display: flex; */
+    /* flex-direction: column; */
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #e2e6eb;
+}
+
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.sidebar .bottom-item {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.new-chat p,
+.bottom-item p,
+.recent {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Smooth transition for opacity */
+}
+
+.extended .new-chat p,
+.extended .bottom-item p,
+.extended .recent {
+    opacity: 1;
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100px;
+        z-index: 2;
+    }
+
+    .sidebar.extended {
+        width: 80%; 
+        left: 0;
+        /* Adjust as necessary for the extended state */
+    }
+
+    .sidebar .top img.menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 30px;
+        margin-left: 27px;
+    }
+
+}
